@@ -48,7 +48,7 @@ def calc_month_to_year(f):
 
 print(calc_month_to_year(calc_debt_payoff_compound(125, .2599, 5590.33)))
 
-### EXCEL SCRAPING ###
+############################################## EXCEL SCRAPING ###########################################################################################
 
 # file_path = 'E:\VSCode Files\Python Testing\Debt Table.csv'
 # debt_table = pd.read_csv(file_path)
@@ -58,12 +58,12 @@ print(calc_month_to_year(calc_debt_payoff_compound(125, .2599, 5590.33)))
 # for index, row in debt_table.iterrows():
 #     print(row)
 
+# Load the Excel Sheet
+df = pd.read_csv('E:\VSCode Files\Excel Exporting\Debt Table.csv')
+
 #########################################################################################################################################################
 ############################################ CALCULATE TOTAL INTEREST PAID ##############################################################################
 #########################################################################################################################################################
-
-# Load the data
-df = pd.read_csv('E:\VSCode Files\Excel Exporting\Debt Table.csv')
 
 def calculate_compound_interest(principal, annual_rate):
     '''Return Compound Interest'''
@@ -79,7 +79,7 @@ df['Compounded_Total'] = df.apply(lambda x: calculate_compound_interest(x['Total
 print(df[['Account', 'Compounded_Total']])
 
 ###########################################################################################################################################################
-##############################################CALCULATE TOTAL MONTHS TO PAYOFF (COMPOUND INTEREST)#########################################################
+############################################# CALCULATE TOTAL MONTHS TO PAYOFF (COMPOUND INTEREST) ########################################################
 ###########################################################################################################################################################
 
 def calculate_payoff_months(principal, annual_rate, payment):
